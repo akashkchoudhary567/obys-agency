@@ -37,6 +37,26 @@ function loadingAnimation(){
         opacity:0,
         duration: 0.6
     })
+
+    tl.from("#nav", {
+        opacity: 0
+    })
+    tl.from(".hero h1, .hero h2, .hero h3", {
+        y: 100,
+        stagger: 0.2
+    })
     
 }
+function cursorAnimation(){
+    document.addEventListener("mousemove", function(dets){
+        gsap.to("#crsr",{
+            left: dets.x,
+            top: dets.y
+        })
+    })
+    
+    Shery.makeMagnet("#nav-2 h4");
+    // Shery.makeMagnet("#menu");
+}
 loadingAnimation()
+cursorAnimation()
